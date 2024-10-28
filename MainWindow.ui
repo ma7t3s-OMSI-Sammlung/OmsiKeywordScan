@@ -56,14 +56,14 @@
     <item>
      <widget class="QLabel" name="lCurrentProgress">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="lCurrentFile">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
     </item>
