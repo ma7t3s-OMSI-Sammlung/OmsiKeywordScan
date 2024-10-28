@@ -119,3 +119,23 @@ void MainWindow::on_actionOpenJson_triggered() {
     f.close();
     updateLists();
 }
+
+void MainWindow::on_actionSavePlainList_triggered() {
+    QString path = QFileDialog::getSaveFileName(this, "", "", "Text File (*.txt)");
+    if(path.isEmpty())
+        return;
+
+    QFile f(path);
+    if(!f.open(QFile::WriteOnly)) {
+        QMessageBox::critical(this, tr("Couldn't save file"), tr("Couldn't save file - no writing access."));
+        return;
+    }
+
+    QByteArray str;
+    for(Command *c : _commands)
+        str.append(c->command.toUtf8() + "\r\n");
+
+    f.write(str);
+    f.close();
+}
+

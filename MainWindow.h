@@ -39,6 +39,8 @@ private slots:
 
     void updateLists();
 
+    void on_actionSavePlainList_triggered();
+
 private:
     Ui::MainWindow *ui;
     ThreadScanner *_scanner;

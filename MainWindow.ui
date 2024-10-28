@@ -114,6 +114,7 @@
     <addaction name="actionOpenJson"/>
     <addaction name="actionSaveJson"/>
     <addaction name="actionQuit"/>
+    <addaction name="actionSavePlainList"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -140,6 +141,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSavePlainList">
+   <property name="text">
+    <string>Save Plain List</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
    </property>
   </action>
  </widget>
