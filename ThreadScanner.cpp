@@ -7,10 +7,6 @@ ThreadScanner::ThreadScanner(QObject *parent) :
     _fileCounter = 0;
 }
 
-ThreadScanner::~ThreadScanner() {
-    qDeleteAll(_commands);
-}
-
 void ThreadScanner::run() {
     QDir dir(_dir);
     if(!dir.exists()) {

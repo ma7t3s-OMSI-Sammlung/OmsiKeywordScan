@@ -14,8 +14,6 @@ class ThreadScanner : public QThread {
 public:
     explicit ThreadScanner(QObject *parent = nullptr);
 
-    ~ThreadScanner();
-
     void run() override;
 
     void scanDir(const QString &dirPath);

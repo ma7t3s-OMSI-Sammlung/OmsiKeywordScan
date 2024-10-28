@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QMessageBox>
+
+#include <QJsonDocument>
 
 #include "ThreadScanner.h"
 
@@ -29,6 +32,12 @@ private slots:
     void on_pbStart_clicked();
 
     void on_lwResults_currentRowChanged(int currentRow);
+
+    void on_actionSaveJson_triggered();
+
+    void on_actionOpenJson_triggered();
+
+    void updateLists();
 
 private:
     Ui::MainWindow *ui;
