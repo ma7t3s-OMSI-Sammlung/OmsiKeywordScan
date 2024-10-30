@@ -86,6 +86,7 @@ void ThreadScanner::setDir(const QString &dir) {
 }
 
 void ThreadScanner::setExtensions(const QStringList &list) {
+    _extensions.clear();
     for(QString current : list) {
         _extensions << "." + current;
     }
