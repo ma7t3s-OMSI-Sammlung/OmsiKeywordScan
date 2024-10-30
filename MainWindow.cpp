@@ -14,6 +14,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // set extensions here
     _scanner->setExtensions({"cfg", "bus", "ovh", "cti", "dsc", "hof", "hum", "map", "ocu", "odr", "oft", "oop", "osn", "otp", "owt", "sco", "sli", "ttp", "ttl", "ttr", "txt"});
+
+    _copyAction = new QAction("Copy", this);
+    _copyAction->setShortcut(QKeySequence::Copy);
+
+    connect(_copyAction, &QAction::triggered, this, &MainWindow::onCopyAction);
+
+    ui->lwResults->addAction(_copyAction);
+    ui->lwResults->setContextMenuPolicy(Qt::ActionsContextMenu);
 }
 
 MainWindow::~MainWindow() {
@@ -139,3 +147,18 @@ void MainWindow::on_actionSavePlainList_triggered() {
     f.close();
 }
 
+
+void MainWindow::on_lwFiles_itemDoubleClicked(QListWidgetItem *item) {
+    if(!item)
+        return;
+
+    QString filename = item->text();
+    QDesktopServices::openUrl("file:///" + ui->leDirPath->text() + "/" + filename);
+}
+
+void MainWindow::onCopyAction() {
+    if(!ui->lwResults->currentItem())
+        return;
+
+    QGuiApplication::clipboard()->setText(ui->lwResults->currentItem()->text());
+}

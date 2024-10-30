@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QMessageBox>
-
 #include <QJsonDocument>
+#include <QListWidgetItem>
+#include <QDesktopServices>
+#include <QClipboard>
 
 #include "ThreadScanner.h"
 
@@ -41,9 +43,15 @@ private slots:
 
     void on_actionSavePlainList_triggered();
 
+    void on_lwFiles_itemDoubleClicked(QListWidgetItem *item);
+
+    void onCopyAction();
+
 private:
     Ui::MainWindow *ui;
     ThreadScanner *_scanner;
+
+    QAction *_copyAction;
 
     QList<Command *> _commands;
 };
