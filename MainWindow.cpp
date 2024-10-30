@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(_scanner, &QThread::finished, this, &MainWindow::finishScan);
 
     // set extensions here
-    _scanner->setExtensions({"cfg", "bus", "ovh", "cti", "dsc", "hof", "hum", "map", "ocu", "odr", "oft", "oop", "osn", "otp", "owt", "sco", "sli", "ttp", "ttl", "ttr"});
+    _scanner->setExtensions({"cfg", "bus", "ovh", "cti", "dsc", "hof", "hum", "map", "ocu", "odr", "oft", "oop", "osn", "otp", "owt", "sco", "sli", "ttp", "ttl", "ttr", "txt"});
 }
 
 MainWindow::~MainWindow() {
